@@ -11,7 +11,7 @@ function Login({ onLogin }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await api.post('/api/login', { email, password });
+      const response = await api.post('/login', { email, password });
       localStorage.setItem('token', response.data.token);
       onLogin(response.data.user);
     } catch (error) {
